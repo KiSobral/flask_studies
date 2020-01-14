@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ super() }} - Login {% endblock %}
+
+{% block content %}
+<div class="col-md-6 col-offset-3">
+    <h2> Login </h2>
+    <form 
+        action="", 
+        method="POST"
+    >
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label> Username </label>
+            {{ form.username(class="form-control", placeholder="Your username") }}
+        </div>
+
+        <div class="form-group">
+            <label> Password </label>
+            {{ form.password(class="form-control") }}
+        </div>
+
+        <div class="checkbox">
+            <label> Remember me {{ form.remember_me }} </label>
+        </div>
+
+
+        <button type="submit" class="btn-default">
+            Submit
+        </button>
+    </form>
+</div>
+{% endblock %}
