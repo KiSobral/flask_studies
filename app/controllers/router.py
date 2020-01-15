@@ -1,6 +1,7 @@
 from flask import render_template
-from app import app
+from app import app, db
 
+from app.models.tables import User
 from app.models.forms import loginForm
 
 @app.route("/", methods=['GET'])
